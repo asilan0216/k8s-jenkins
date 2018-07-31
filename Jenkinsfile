@@ -1,6 +1,6 @@
 pipeline {
  agent {
-   label '9dec2e08431f'
+   label '95ceebfb6166'
 	} 
  stages {
    stage('clean stage') {
