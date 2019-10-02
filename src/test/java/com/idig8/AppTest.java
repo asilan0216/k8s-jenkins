@@ -1,4 +1,4 @@
-package com.geestract;
+package com.idig8;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

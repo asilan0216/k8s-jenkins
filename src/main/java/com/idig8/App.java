@@ -1,4 +1,4 @@
-package com.geestract;
+package com.idig8;
 
 /**
  * Hello world!
