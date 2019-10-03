@@ -44,7 +44,7 @@ remote.allowAnyHosts = true
             message: 'Choose a deploy environment',
             parameters: [
                 [
-                    $class: '选择版本',
+                    $class: 'ChoiceParameterDefinition',
                     choices: "Dev\nQA\nProd",
                     name: 'Env'
                 ]
