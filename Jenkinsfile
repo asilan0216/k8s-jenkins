@@ -54,11 +54,11 @@ remote.allowAnyHosts = true
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/pipline-test/ && sed -i 's/<BUILD_TAG>/${build_tag}/' k8s.yaml"
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/pipline-test/ && sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
         if (userInput == "Dev") {
-            // deploy dev stuff
+            // deploy DEV操作
         } else if (userInput == "QA"){
-            // deploy qa stuff
+            // deploy QA操作
         } else {
-            // deploy prod stuffcd /data/k8s/jenkins2/workspace/pipline-test/ && 
+            // deploy prod操作
         }
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/pipline-test/ && kubectl apply -f k8s.yaml"
     } 
