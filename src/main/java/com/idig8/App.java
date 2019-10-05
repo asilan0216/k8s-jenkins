@@ -6,8 +6,9 @@ package com.idig8;
  */
 public class App 
 {
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World! k8s jenkins" );
+    public static void main( String[] args ) {
+
+        System.out.println( "Hello World! k8s jenkins");
+        System.out.println( "Branch Master");
     }
 }
