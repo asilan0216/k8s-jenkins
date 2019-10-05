@@ -43,6 +43,10 @@ remote.allowAnyHosts = true
    stage('Deploy') {
         echo "5. Deploy Stage"
         echo "This is a deploy step to ${env.BRANCH_NAME}"
+
+         if (env.BRANCH_NAME == 'master') {
+                    input "确认要部署线上环境吗？"
+                }
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/k8s-jenkins_${env.BRANCH_NAME}/ && sed -i 's/<BUILD_TAG>/${build_tag}/' k8s.yaml"
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/k8s-jenkins_${env.BRANCH_NAME}/ && sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/k8s-jenkins_${env.BRANCH_NAME}/ && kubectl apply -f k8s.yaml"
