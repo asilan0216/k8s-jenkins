@@ -41,7 +41,7 @@ remote.allowAnyHosts = true
     }
 
    stage('Deploy') {
-        echo "5. Deploy Stage
+        echo "5. Deploy Stage"
         echo "This is a deploy step to ${userInput}"
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/pipline-test/ && sed -i 's/<BUILD_TAG>/${build_tag}/' k8s.yaml"
         sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/pipline-test/ && sed -i 's/<BRANCH_NAME>/${env.BRANCH_NAME}/' k8s.yaml"
