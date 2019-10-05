@@ -43,7 +43,6 @@ remote.allowAnyHosts = true
    stage('Deploy') {
         echo "5. Deploy Stage"
         echo "This is a deploy step to ${env.BRANCH_NAME}"
-
          if (env.BRANCH_NAME == 'master') {
                     input "确认要部署线上环境吗？"
                 }
