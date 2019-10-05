@@ -28,7 +28,7 @@ remote.allowAnyHosts = true
         withCredentials([usernamePassword(credentialsId: 'ssh', passwordVariable: 'sshPassword', usernameVariable: 'sshUserName')]) {
             remote.user = "${sshUserName}"
             remote.password = "${sshPassword}"
-            sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/pipline-test/ && docker build -t zhugeaming/jenkins-demo:${build_tag} ."
+            sshCommand remote: remote, command: "cd /data/k8s/jenkins2/workspace/k8s-jenkins_${env.BRANCH_NAME}/ && docker build -t zhugeaming/jenkins-demo:${build_tag} ."
 
         }
     }
